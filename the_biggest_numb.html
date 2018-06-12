@@ -5,10 +5,15 @@
 	var b = parseInt(prompt("B: "));
 	var c = parseInt(prompt("C: "));
 
+	if (isNaN(a) || isNaN(b) || isNaN(c)) {
+		alert ("ай-ай-ай, надо было вводить только числа :( ");
+	} else {
+		alert("здорово,когда-нибудь эти числа будут использоваться :)");
+	}
+
 	if ((a > b) && (a > c))
 	{
 		alert ("A больше всех");
-		score = score + 1;
 	} else if ((b > a) && (b > c)) {
 		alert ("B больше всех");
 	} else if ((c > a) && (c > b)) {
