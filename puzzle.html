@@ -1,22 +1,27 @@
 <meta charset = "utf-8">
 <script>
-	n = 0;
-	var Z1 = prompt ("Зимой и летом одним цветом");
-	if (Z1 == "елка")
+	var score = 0;
+	var answer = "";
+	answer = prompt ("Зимой и летом одним цветом");
+	
+	if (answer == "елка")
 	{
 		alert ("Верно :)");
-		n = n+1;
+		score = score + 1;
 	} else {
 			alert ("Неверно");
 	       }
-	var Z2 = prompt ("Кто его раздевает, тот слёзы проливает");
-	if (Z2 == "лук")
+
+	var answer = prompt ("Кто его раздевает, тот слёзы проливает");
+	
+	if (answer == "лук")
 	{
 		alert ("Верно :)");
-		n = n+1;
+		score = score+1;
 	} else {
 			alert ("Неверно");
 	       }
-alert ("Верных ответов: "+ n);
+
+alert ("Верных ответов: "+ score);
 
 </script>
