@@ -1,0 +1,17 @@
+<meta charset = "utf-8">
+<script>
+    
+    var sum = parseInt(prompt("Сумма вклада:"));
+	var percentage = parseInt(prompt("Процентная ставка, %:"));
+	var time = parseInt(prompt("Срок вклада, лет:"));
+	var sum_vklada_pred = sum;
+
+		for (var n = 1; n <= time; n++)
+		{
+			var percent = Math.pow((1 + (percentage/100)), 1);
+			var sum_vklada = Math.round((sum_vklada_pred * percent) * 100) / 100;
+			alert ("Прошло лет: " + n + ".  Сумма на счету: " + sum_vklada);
+			sum_vklada_pred = sum_vklada;
+		}
+
+</script>
