@@ -43,6 +43,11 @@ function getStatus()
     var dealer = [getCard()];
     var player = [getCard(), getCard()];
 
+    if (getSum(player) == 21) 
+    {
+        alert("Дьявольское везение! Black Jack на раздаче! $_$");
+    } else 
+    {
     var answer = "";
     do {
         answer = prompt(getStatus() + "Хотите еще карту? 1 - да, иначе - нет");
@@ -63,6 +68,38 @@ function getStatus()
             alert("Black Jack  " + getStatus());
             break;
         }
+        else {
+            //игрок закончил брать карты
+            //теперь карты берет дилер
+
+            while (getSum(dealer) < 17)
+            {
+                dealer.push(getCard());
+            };
+
+            //проверяем результат
+            var sumDealer = getSum(dealer);
+            var sumPlayer = getSum(player);
+
+            if (sumDealer == 21)
+            {
+                alert("У дилера Black Jack! T_T  " + getStatus());
+            } else if (sumDealer > 21)
+            {
+                alert("У дилера перебор! ]:->  " + getStatus());
+            } else if (sumPlayer == sumDealer)
+            {
+                alert("Ничья! о_О " + getStatus());
+            } else if (sumPlayer > sumDealer) 
+            {
+                alert("Выигрыш :)  " + getStatus());
+            } else 
+            {
+                alert("Проигрыш :(  " + getStatus());
+            }
+        }
     } while(answer == "1");
+    }
+
 
 </script>
