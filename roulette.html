@@ -1,0 +1,29 @@
+<meta charset = "utf-8">
+<script>
+    
+    var arr = [];
+    var rounds = 50;
+    var red = 0;
+    var i = 0;
+    var red_max = 0;
+
+    for (i = 0; i<=rounds; i++)
+    {
+    	arr.push(Math.round((-1) + Math.random()));
+    }
+
+    alert(arr);
+
+    for(i=0; i<arr.length; i++) {
+       	if (arr[i] == (-1))
+    	{
+    		red++;
+		} else	{ red = 0;}
+        if (red > red_max)
+		{
+			red_max = red;
+		} 
+        }
+    alert('Максимальное количество выпавших подряд красных: ' + red_max);
+
+</script>
