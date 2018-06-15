@@ -23,11 +23,11 @@ function getSum(arr)
             } else if (arr[i] == 'J' || arr[i] == 'Q' || arr[i] == 'K')
             {
                 arr[i] = 10;
-            } else if (sum + 10 > 21)
+            } else if (sum + 11 > 21)
             {
                 arr[i] = 1;
             } else {
-                arr[i] = 10;
+                arr[i] = 11;
             }
             sum = sum + arr[i];
         }
@@ -35,10 +35,34 @@ function getSum(arr)
         return sum;
     }
 
+function getStatus()
+    {
+        return 'Дилер: ' + dealer.join(' ') + "  Игрок: " + player.join(' ') + ".";
+    }
+
     var dealer = [getCard()];
     var player = [getCard(), getCard()];
 
-    alert('Дилер: ' + dealer.join(' ') + "  Игрок: " + player.join(' '));
-    alert("Текущая сумма карт у игрока: " + getSum(player));
+    var answer = "";
+    do {
+        answer = prompt(getStatus() + "Хотите еще карту? 1 - да, иначе - нет");
+        //Сдаем карту или прекращаем игру
+        if (answer == "1")
+        {
+            player.push(getCard());
+        }
+  
+        cur_sum = getSum(player);
+
+        if (cur_sum > 21)
+        {
+            alert("Перебор  " + getStatus());
+            break;
+        } else if (cur_sum == 21)
+        {
+            alert("Black Jack  " + getStatus());
+            break;
+        }
+    } while(answer == "1");
 
 </script>
